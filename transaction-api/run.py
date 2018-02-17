@@ -54,7 +54,9 @@ def health():
 
 if __name__ == '__main__':
     # Env
-    redis_url: str = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379/0')
+    redis_host: str = os.getenv('REDIS_SERVICE_HOST', '127.0.0.1')
+    redis_port: str = os.getenv('REDIS_SERVICE_PORT', '6379')
+    redis_url: str = "redis://"+redis_host+":"+redis_port+"/0"
     http_port: int = int(os.getenv('HTTP_PORT', 5000))
     jwt_secret: str = os.environ['JWT_SECRET']
 

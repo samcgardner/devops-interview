@@ -2,7 +2,7 @@ Kubernetes based hosting for your microservices! Instructions as follows:
 
 1. Install kubectl and point it to a suitable Kubernetes provider. Minikube (https://github.com/kubernetes/minikube) is handy for local development
 2. Inject the jwt secret into your Kubernetes environment. An extremely basic way to do this would be the following:
-`kubectl create secret generic jwt -0from-literal=jwt=supersecret`
+`kubectl create secret generic jwt --from-literal=jwt=supersecret`
 3. Deploy the Kubernetes services with kubectl as follows: `kubectl apply -f ./k8s-services.yml`
 4. Inspect the external IPs of your newly created services with `kubectl get services`
 
